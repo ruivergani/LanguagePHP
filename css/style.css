@@ -1,0 +1,74 @@
+html {
+    font: 15pt Arial;
+    color: #273747;
+    font-weight: bold;
+}
+body {
+    background: url(wall4.jpg) no-repeat top center fixed;
+    background-size: cover;
+}
+
+div::before {
+    content: " Prompt de Comando - By Rui Vergani";
+    font: 10pt Arial;
+    font-weight: bold;
+    color: white;
+    background-color: #273747;
+    padding: 5px;
+    display: block;
+    position: relative;
+    top: -10px;
+    left: -10px;
+    width: 560px;
+    border-radius-top:5px;
+}
+
+div {
+    background-color: rgba(255,255,255,.8);
+    margin: 100px auto 100px auto;
+    padding: 10px;
+    width: 550px;
+    min-height:350px;
+    border-radius: 5px;
+}
+
+a {
+    color: #273747;
+    text-decoration: none;
+    font-weight: bold;
+    font: 11pt Helvetica;
+}
+a:hover {
+    text-decoration: underline;
+}
+span.foco {
+    font-weight: bold;
+    color: #7e050c;
+}
+p{
+   font-size: 21px;
+   text-align: center;
+}
+.botao{
+    box-shadow: 1px 1px 1px #273747;
+    background-color: rgb(39,55,71);
+    border:none;
+    color:#fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    opacity:0.7; /* opacidade */
+    transition:opacity 1s;
+    position: absolute;
+    float: right;
+    bottom: 180px;
+    right: 410px;
+
+
+}
+.botao:hover{
+    background-color: rgb(39,55,71);
+    opacity:1;
+    transition: opacity 1s;
+    box-shadow: 2px 2px 2px #FAFAFA;
+    cursor:pointer;
+}

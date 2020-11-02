@@ -1,0 +1,21 @@
+table input, select{
+	margin-left: 10%;
+	margin-bottom: 0.2em;
+}
+
+.caractere{
+	width: 3.5em;
+}
+
+input[type=number]{
+	width: 3.5em;
+}
+
+form{
+	margin-top: 10em; 
+	background-color: #CDC9C9;
+	font-size: 1.2em;
+	padding: 0 0 0.8em 1em;
+	border: 1px #000 solid;	
+}
+

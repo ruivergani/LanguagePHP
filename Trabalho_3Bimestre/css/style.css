@@ -1,0 +1,17 @@
+body{
+	background: #f6f6f6 url(../images/bg.png) repeat fixed;
+}
+nav#mainNav{
+	background-color: rgb(136, 146, 191);
+	border-bottom: 0.2em solid #4F5B93;
+	box-shadow: 0 0.25em 0.25em rgba(0,0,0,.1);
+	z-index: 1030;
+}
+div#navbar-collapse ul li a{
+	color: #fff;
+	font-weight: bolder;
+}
+.paragrafo{
+	font-size: 1.2em;
+	font-weight: bolder;
+}

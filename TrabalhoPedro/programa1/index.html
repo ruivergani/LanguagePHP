@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Programa 1</title>
+
+	<link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
+	<link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+	<div id="interface" class="container-fluid">
+		<form method="POST" action="saida.php" class="center-block" style="width: 31%;">
+			<h3>Preencha os campos corretamente:</h3>
+			<table>
+				<tr> 
+					<td>Largura:</td>
+					<td><input name="largura" type="number"></td>
+				</tr>
+				<tr> 
+					<td>Altura:</td>
+					<td> <input name="altura" type="number"></td>
+				</tr>
+				<tr>
+					<td>Caractere da borda:</td>
+					<td><input name="caracborda" class="caractere"></td>
+				</tr>
+				<tr>
+					<td>Cor da borda:</td>
+					<td>
+						<select name="corborda">
+							<option value="red">Vermelho</option>
+							<option value="green">Verde</option>
+							<option value="black">Preto</option>
+							<option value="yellow">Amarelo</option>
+							<option value="blue">Azul</option>
+						</select> 
+					</td>
+				</tr>
+				<tr>
+					<td>Caractere preenchido: </td>
+					<td><input name="caracpreen" class="caractere"></td>
+				</tr>
+				<tr>
+					<td>Cor do preenchimento:</td>
+					<td>
+						<select name="corpreen">
+							<option value="red">Vermelho</option>
+							<option value="green">Verde</option>
+							<option value="black">Preto</option>
+							<option value="yellow">Amarelo</option>
+							<option value="blue">Azul</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<input type="submit" value="Gerar retângulo" class="btn btn-primary">
+		</form>
+	</div>	
+</body>
+</html>

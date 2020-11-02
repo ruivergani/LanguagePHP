@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Molengo');
+
+body{
+	font-family: Roboto,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #3D3F4D;
+}
+.login-background{
+	background-image: url(../images/download.png);
+	background-color: #3D3F4D;
+}
+div#cardpanel{
+	height: 300px;
+}
+h4{
+	font-weight: bold;
+	color: #3D3F4D;
+	font-family: 'Molengo', sans-serif;
+}
+span{
+    font-weight: bold;
+}

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Portfólio | Rui Vergani Neto</title>
+	<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css"> -->
+	<!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css" media="screen,projection"/>
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <!--Let browser know website is optimized for mobile-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Scripts -->
+    <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script src="js/init.js"></script>
+    
+    <link rel="icon" href="images/icon.png"/>
+    <style type="text/css">
+      #preload
+      {
+       display: block ;
+      }
+      #posload
+      {
+       display: none;
+      }
+      /* Center the image and position the close button */
+      .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+        position: relative;
+      }
+      .avatar {
+        width: 200px;
+        height:200px;
+        border-radius: 50%;
+      }
+      /* The Close Button (x) */
+      .close {
+          position: absolute;
+          right: 25px;
+          top: 0;
+          color: #000;
+          font-size: 35px;
+          font-weight: bold;
+      }
+      .close:hover,.close:focus {
+          color: red;
+          cursor: pointer;
+      }
+      </style>
+      <script type="text/javascript">
+      function muda_p_carregado()
+      {
+       document.getElementById("posload").style.display = "block";
+       document.getElementById("preload").style.display = "none";
+      }
+      </script>
+
+</head>
+
+<body onload="muda_p_carregado()">
+    <div id="preload">
+      <div class="preloader-wrapper big active center-align">
+           <div class="spinner-layer spinner-red">
+             <div class="circle-clipper left">
+               <div class="circle"></div>
+             </div><div class="gap-patch">
+               <div class="circle"></div>
+             </div><div class="circle-clipper right">
+               <div class="circle"></div>
+             </div>
+           </div>
+      </div>
+    </div>
+    <div id="posload" style="background: #f6f6f6 url(../images/bg.png) repeat fixed;">
+    	<nav class="indigo darken-1" role="navigation">
+          <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Rui Vergani Neto</a>
+            
+
+            <ul id="nav-mobile" class="side-nav">
+              <li><a data-target="modal1" class="waves-effect waves-light modal-trigger">Login</a></li>
+            </ul>
+
+            <ul class="right hide-on-med-and-down">
+              <li><a data-target="modal1" class="waves-effect waves-light modal-trigger">Login</a></li>
+            </ul>
+            
+            <ul id="nav-mobile" class="side-nav">
+              <li><a href="#" class="waves-effect waves-light">Contato</a></li>
+            </ul>
+
+            <ul class="right hide-on-med-and-down">
+              <li><a href="#" class="waves-effect waves-light">Contato</a></li>
+            </ul>
+            
+            <ul id="nav-mobile" class="side-nav">
+              <li><a href="#tarefa" class="waves-effect waves-light">Tarefas</a></li>
+            </ul>
+
+            <ul class="right hide-on-med-and-down">
+              <li><a href="#tarefa" class="waves-effect waves-light">Tarefas</a></li>
+            </ul>
+            
+            <ul id="nav-mobile" class="side-nav">
+              <li><a href="#" class="waves-effect waves-light">Sobre Mim</a></li>
+            </ul>
+
+            <ul class="right hide-on-med-and-down">
+              <li><a href="#" class="waves-effect waves-light">Sobre Mim</a></li>
+            </ul>
+            
+            <ul id="nav-mobile" class="side-nav">
+              <li><a href="#" class="waves-effect waves-light">Home</a></li>
+            </ul>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="#" class="waves-effect waves-light">Home</a></li>
+            </ul>
+
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+      </nav>
+
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+          <br><br>
+          <h1 class="header center indigo-text">Linguagem de Programação IV</h1>
+          <div class="row center">
+            <h5 class="header col s12 light">Site em construção...</h5>
+          </div>
+          <div class="row center">
+            <a href="#" id="download-button" class="btn-large waves-effect waves-light indigo">Loading...</a>
+          </div>
+          <br><br>
+         
+          <!-- Modal Estrutura Formulário-->
+          <div id="modal1" class="modal">
+            <div class="modal-content">
+              <form method="POST" action="entrada.html" class="col s10">
+                  <h4 class=" center-align">Login</h4>
+
+                  <div class="container">
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <input id="usuario" name="usuario" type="text" class="validate" minlength="6" maxlength="30">
+                        <label for="usuario">Usuário</label>
+                      </div>
+                    </div>  
+                     <div class="row">
+                      <div class="input-field col s12">
+                        <input id="senha" name="senha" type="password" class="validate" minlength="6" maxlength="30">
+                        <label for="password">Senha</label>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="modal-footer">
+                    <div style="float: left;">
+                      <button type="submit" class=" modal-action btn-flat" name="action">Esqueci Senha! 
+                      </button>
+                      <button type="reset" class=" modal-action btn-flat" name="action">Limpar
+                      </button>
+                    </div>
+
+                    <button type="submit" class=" modal-action btn waves-green waves-light" name="action" 
+                     onClick="modal">send</i>
+                    </button>
+                  </div>
+              </form>
+            </div>
+          </div>
+          
+      </div>
+    </div>
+
+    <!--   Icon Section   -->
+    <div id="tarefa">
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Acelera o Desenvolvimento</h5>
+
+            <p class="light">Nós fizemos a maior parte do trabalho pesado para você fornecer um estilo padrão que incorporasse nossos componentes personalizados. Além disso, refinamos animações e transições para proporcionar uma experiência mais suave para os desenvolvedores.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Experiência do usuário focada</h5>
+
+            <p class="light">Ao utilizar elementos e princípios de Design de Material, conseguimos criar uma estrutura que incorporasse componentes e animações que ofereçam mais feedback aos usuários. Além disso, um único sistema responsivo subjacente em todas as plataformas permite uma experiência de usuário mais unificada.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Fácil de Trabalhar </h5>
+
+            <p class="light">Nós fornecemos documentação detalhada, bem como exemplos de código específicos para ajudar os novos usuários a começar. Também estamos sempre abertos ao feedback e podemos responder a quaisquer perguntas que um usuário possa ter sobre Materializar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <footer class="page-footer indigo darken-1">
+      <div class="container">
+        <div class="row" style="margin-bottom: 0px;">
+
+            <div class="col 3 s6">
+              <h5 class="white-text"><i class="fa fa-map-marker"></i> Endereço</h5>
+              <p class="grey-text text-lighten-4">Avenida Gonçalves Leite, Centro, 152. Paraguaçu, MG, Brasil.</p>
+            </div>
+
+            <div class="col 3 s3">
+              <h5 class="white-text"><i class="fa fa-phone-square"></i> Telefone</h5>
+              <ul>
+                <li><a class="white-text" href="#!">(35) 98436-0977</a></li>
+                <li><a class="white-text" href="#!">(35) 99881-1579</a></li>
+              </ul>
+            </div>
+
+            <div class="col 3 s3">
+              <h5 class="white-text"><i class="fa fa-envelope"></i> Email</h5>
+              <ul>
+                <li><a class="white-text" href="#!">vergani.neto@gmail.com</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+
+      <div class="footer-copyright">
+        <div class="container">
+        Feito por <a class="indigo-text text-lighten-3" href="http://materializecss.com">Rui Vergani Neto utilizando Materialize</a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/javascript">
+       $(document).ready(function(){
+      // o "href" atributo do modal trigger deve ser especificado a modal ID para poder ser acessado
+      $('.modal').modal();
+      });
+      </script>
+
+	</div>
+</body>
+</html>

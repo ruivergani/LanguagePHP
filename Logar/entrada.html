@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Tela Login</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="icon" href="favicon.ico"/>
+</head>
+
+<body>
+  <section>
+    <form method="POST" action="enviar.php">
+
+       <fieldset id="usuario">
+         <p><span>Nome de Usuário</span> <br/><input type="text" placeholder="Digite seu usuário" name="user" id="cuser" required maxlength="20" /></p><br/>
+         <p><span>Senha</span> <br/><input type="password" placeholder="Digite sua senha" name="senha" id="csenha" required maxlength="30" minlength="8" /></p><br/>
+
+        <div class="botoes">
+       	  <p><button type="submit" style="width:100px;height:30px"  class="enviar">Acessar</button></p>
+        </div>
+        <div class="botoes">
+		      <p><button type="reset"  style="width:100px;height:30px"  class="limpar">Limpar </button></p>
+	      </div>
+	      <div class="botoes">
+		      <p><button type="submit" style="width:100px;height:30px"  class="esqsenha">Esqueci Senha! </button></p>
+        </div>
+      </fieldset>
+   </form>
+ </section>
+</body>
+</html>

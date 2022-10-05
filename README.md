@@ -1,2 +1,0 @@
-# LinguagemPHP
- Language PHP exercises

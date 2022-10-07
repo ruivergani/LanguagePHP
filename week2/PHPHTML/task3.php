@@ -16,17 +16,17 @@
             <legend>Personal Details</legend>
             <div>
                 <label for="first_name">First name:</label>
-                <input type="text" id="first_name" name="first_name" placeholder="<?= "${first_name}" ?>">
+                <input type="text" id="first_name" name="first_name" placeholder="<?= "${first_name}" ?>" value="<?= "${first_name}" ?>">
             </div>
             </br>
             <div>
                 <label for="surname">Surname:</label>
-                <input type="text" id="surname" name="surname" placeholder="<?= "${surname}" ?>">
+                <input type="text" id="surname" name="surname" placeholder="<?= "${surname}" ?>" value="<?= "${surname}" ?>">
             </div>
             </br>
             <div>
                 <label for="age">Age:</label>
-                <input type="number" id="age" name="age" placeholder="<?= "${age}" ?>">
+                <input type="number" id="age" name="age" placeholder="<?= "${age}" ?>" value="<?= "${age}" ?>">
             </div>
             </br>
             <div>

@@ -31,13 +31,36 @@
         <!-- Display validation --> 
         <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $valid = true;
                 // Check if username and passoword exists
                 if(empty($username) || empty($password1) || empty($password2)){
                     echo "Please enter a username and password.";
+                    $valid = false;
                 }
                 else{
-                    // start other validation
-
+                    // Not empty passoword or username do the following
+                    $len = strlen($username); // Length of the string
+                    if ($len < 4){
+                        echo "</br>";
+                        echo "Field Name is too short, minimum is 4 characters (15 max).";
+                        $valid = false;
+                    }
+                    elseif($len > 15){
+                        echo "</br>";
+                        echo "Field Name is too long, maximum is 15 characters (4 min).";
+                        $valid = false;
+                    }
+                    // match passwords
+                    if ($_POST['password1']!= $_POST['password2']){
+                        $valid = false;
+                        echo "</br>";
+                        echo "</br>";
+                        echo("Oops! Password did not match! Try again. ");
+                    }
+                    if($valid){
+                        echo "Congratulations! Data has been stored successfully.";
+                        exit();
+                    }
                 }
             }
 

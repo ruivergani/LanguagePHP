@@ -8,5 +8,4 @@
         echo "$films[$i]";
         echo "\n";
     }
-
 ?>

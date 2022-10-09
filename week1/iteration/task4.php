@@ -29,6 +29,4 @@
         }
         $user_choice = readline("\nEnter an integer between 1 - 7 (-1 exit): ");
     }
-
-
 ?>

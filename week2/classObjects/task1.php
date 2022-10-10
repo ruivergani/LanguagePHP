@@ -1,5 +1,6 @@
 <?php
     include './Person.php';
+    include './Student.php';
     // Collect data variable from form
     $first_name = $_POST["first_name"];
     $surname = $_POST["surname"];
@@ -8,6 +9,13 @@
     $person1 = new Person();
     $person1->setName($first_name, $surname);
     $person1->setAge($age);
+    // Teste the Student Class
+    $student = new Student();
+    $student->setStudentId("v015008l");
+    $student->setName("Michel", "Neto");
+    echo "Student ID: " .$student->getStudentId();
+    echo "</br>";
+    echo "Student Name " .$student->getName();
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -19,7 +19,7 @@
             return $this->age;
         }
         //Constructor
-        function __construct($name, $age){
+        function __construct(){
             $this->name = "";
             $this->age = 0;
         }

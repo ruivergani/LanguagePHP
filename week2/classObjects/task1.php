@@ -6,6 +6,8 @@
     $age = $_POST["age"];
     // Instantiate an Object an pass values to it
     $person1 = new Person();
+    $person1->setName($first_name, $surname);
+    $person1->setAge($age);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,8 +34,9 @@
         </fieldset>
         </br></br>
         <?php
-            echo "Hello, ${first_name} ${surname}" . "<br>";
-            echo "You are ${age} years old" . "<br>";
+            echo "Hello, " . $person1->getName(); ". ";
+            echo "</br>";
+            echo "You are " . $person1->getAge() . " years old." . "</br>";
         ?>
     </form>
 </div>

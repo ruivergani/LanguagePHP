@@ -7,14 +7,6 @@
     $address = $_POST["address"];
     $telephone = $_POST["telephone"];
     $date_of_birth = $_POST["date_of_birth"];
-    
-    // Prepate and Bind using Parameters
-    //$query = "INSERT INTO Student (student_id, surname, forename, address, telephone, date_of_birth) VALUES (?, ?, ?, ?, ?, ?)";
-    //$prepared = $conn->prepare($query);
-    //$prepared->bind_param("isssss", $_POST["student_id"], $_POST["surname"], $_POST["forename"],$_POST["address"], $_POST["telephone"], $_POST["date_of_birth"]); 
-    // binds the parameters to the SQL query and tells the database what the parameters are. "ssh" argument lists the types of data that the parameters are. (i: int, d: double / s: string / b: BLOB)
-    //$prepared->execute();
-
 
     // Get data from the MySQL Table to display later
     $query = "SELECT student_id, surname, forename, address, telephone, date_of_birth FROM Student";

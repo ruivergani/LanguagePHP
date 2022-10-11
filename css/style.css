@@ -9,7 +9,36 @@ body {
     background-size: cover;
     font-size: 18px;
 }
-
+label {
+    font: 18px "typewriter", sans-serif;
+  }
+input, textarea {
+    display: block;
+    width: 10rem;
+    margin: 10px 0;
+    padding:10px;
+}
+.type-3 {
+    border:1px solid #111;
+    transition: .3s background-color;
+}
+.type-3:hover {
+    background-color: #fafafa;
+}
+.btn-secondary{
+    /* remove default behavior */
+    appearance:none;
+    -webkit-appearance:none;
+    cursor: pointer;
+    /* usual styles */
+    padding:10px;
+    border:none;
+    background-color:green;
+    color:#fff;
+    font-weight:600;
+    border-radius:5px;
+    width:11rem;
+}
 div::before {
     content: "Command Prompt by Rui Vergani Neto";
     font-size: 16px;
@@ -21,7 +50,7 @@ div::before {
     width: 100%;
     max-width: 47rem;
     display: block;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .container {

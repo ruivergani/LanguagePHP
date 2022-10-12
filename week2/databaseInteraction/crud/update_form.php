@@ -16,24 +16,24 @@
                 <legend>Update Record</legend>
                 <!-- Student ID -->
                 <label for="student_id">Student ID:</label>
-                <input type="number" id="student_id" name="student_id" placeholder="Enter ID"
-                required value="<?php echo isset($editData) ? $editData['student_id'] : '' ?>>
+                <input type="number" id="student_id" name="student_id"
+                required value="<?php echo isset($editData) ? $editData['student_id'] : '' ?>">
                 <!-- Student Forename -->
                 <label for="forename">Forename:</label>
-                <input type="text" id="forename" name="forename" placeholder="Enter First Name" 
+                <input type="text" id="forename" name="forename" 
                 value="<?php echo isset($editData) ? $editData['forename'] : '' ?>">
                 <!-- Student Surname -->
                 <label for="surname">Surname:</label>
-                <input type="text" id="surname" name="surname" placeholder="Enter Surname" 
+                <input type="text" id="surname" name="surname"
                 value="<?php echo isset($editData) ? $editData['surname'] : '' ?>">
-                <!-- Student Address -->
+                <!-- Student Address (Not working) -->
                 <label for="address">Address:</label>
                 <textarea type="text" id="address" name="address" rows="4" cols="30" 
                 value="<?php echo isset($editData) ? $editData['address'] : '' ?>">
                 </textarea>
                 <!-- Student Telephone -->
                 <label for="telephone">Telephone:</label>
-                <input type="text" id="telephone" name="telephone" placeholder="Enter Telephone" 
+                <input type="text" id="telephone" name="telephone" 
                 value="<?php echo isset($editData) ? $editData['telephone'] : '' ?>">
                 <!-- Student Date of Birth -->
                 <label for="date_of_birth">Date of Birth:</label>

@@ -1,17 +1,17 @@
 <?php
-    session_start();   // session starts with the help of this function 
+    session_start(); // Session starts with the help of this function 
     $msg = "";
-    if(isset($_SESSION['use'])){ // Checking whether the session is already there or not if 
-        header("Location:home.php"); // true then header redirect it to the home page directly 
+    if(isset($_SESSION['use'])){  // Checking whether the session is already there or not if 
+        header("Location:home.php"); // True then header redirect it to the home page directly 
     }
 
-    if(isset($_POST['login'])){ // it checks whether the user clicked login button or not 
+    if(isset($_POST['login'])){ // It checks whether the user clicked login button or not 
         $username = $_POST['username'];
         $password = $_POST['password'];
         if($username == "Fred" && $password == "Bloggs"){  
-            $_SESSION['logged']=$user;
+            $_SESSION['use']= $username;
             echo '<script type="text/javascript"> window.open("home.php","_self");</script>'; 
-            //  On Successful Login redirects to home.php
+            // On Successful Login redirects to home.php
             $msg = "Login successful."; 
         }
         else{

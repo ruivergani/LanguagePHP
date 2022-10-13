@@ -12,8 +12,11 @@
       if(!isset($_SESSION['use'])) { // If session is not set then redirect to Login Page
           header("Location: login.php");  
       }
-        echo $_SESSION['use'];
+        echo "Session Name: " . $_SESSION['use'];
+        echo "</br>";
         echo "Login Success";
+        echo "</br>";
+        echo "</br>";
         echo "<a href='logout.php'> Logout</a> "; 
     ?>
   </div>

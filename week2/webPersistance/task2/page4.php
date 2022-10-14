@@ -1,4 +1,7 @@
 <?php
+    include('./page1.php');
+    include('./page2.php');
+    include('./page3.php');
     
  ?>
 <html>
@@ -11,6 +14,7 @@
         <form action="" method="post">
             <!-- Page 4 -->
             <h4>Display all the information</h4>
+            
         </form>
     </div>
 </body>

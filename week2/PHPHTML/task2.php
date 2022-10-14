@@ -1,7 +1,7 @@
 <?php
-     $firstName = $_POST["first_name"];
-     $surname = $_POST["surname"];
-     $age = $_POST["age"];
+    $firstName = $_POST["first_name"];
+    $surname = $_POST["surname"];
+    $age = $_POST["age"];
 ?>
 
 <!DOCTYPE html>

@@ -19,6 +19,12 @@
         echo "</br>";
         echo "<a href='logout.php'> Logout</a> "; 
     ?>
+    </br>
+    </br>
+    <a href="./page2.php">Go to page 2</a>
+    </br>
+    </br>
+    <a href="./page3.php">Go to page 3</a>
   </div>
 </body>
 </html>

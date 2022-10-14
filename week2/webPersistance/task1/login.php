@@ -4,7 +4,6 @@
     if(isset($_SESSION['use'])){  // Checking whether the session is already there or not if 
         header("Location:home.php"); // True then header redirect it to the home page directly 
     }
-
     if(isset($_POST['login'])){ // It checks whether the user clicked login button or not 
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -35,6 +34,12 @@
             <label for="password"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="password" required>
             <input type="submit" name="login" class="btn-secondary" value="Login">
+            </br>
+            </br>
+            <a href="./page2.php">Go to page 2</a>
+            </br>
+            </br>
+            <a href="./page3.php">Go to page 3</a>
         </form>
     </div>
 </body>

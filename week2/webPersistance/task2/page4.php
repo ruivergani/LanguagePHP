@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="" method="post">
+        <form action="<?php print $_SERVER['PHP_SELF']?>" method="post">
             <!-- Page 4 -->
             <h4>Display all the information</h4>
             

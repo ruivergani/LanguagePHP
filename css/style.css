@@ -18,6 +18,10 @@ input, textarea {
     margin: 10px 0;
     padding:10px;
 }
+input[type="radio"]{
+    display: inline-block;
+    width: 2rem;
+}
 .type-3 {
     border:1px solid #111;
     transition: .3s background-color;

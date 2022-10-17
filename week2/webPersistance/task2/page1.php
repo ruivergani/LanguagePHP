@@ -11,14 +11,17 @@
 </head>
 <body>
     <div class="container">
-        <form action="" method="post">
+        <form action="<?php print $_SERVER['PHP_SELF']?>" method="post">
             <!-- Name -->
             <label for="name"><b>Name</b></label>
             <input type="text" placeholder="Enter Name" name="name" required>
+            <!-- Hidden form concept -->
             <input type="hidden" value="<?= $name; ?>" name="name_hidden">
+
             <!-- Address -->
             <label for="address"><b>Address</b></label>
             <input type="text" placeholder="Enter Address" name="address" required>
+            <!-- Hidden form concept -->
             <input type="hidden" value="<?= $address; ?>" name="address_hidden">
 
             <input type="submit" class="btn-secondary" value="Submit">

@@ -1,8 +1,6 @@
 <?php
     include './Musician.php';
     // Collect data variable from form
-    $name = "";
-    $date_of_birth = "";
     $name = $_POST["name"];
     $date_of_birth = $_POST["date_of_birth"];
     // Instantiate 4 new Objects as in the table
@@ -27,8 +25,10 @@
     
     //Create every time you press the button
     $person = new Musician();
-    $person->setName($name);
-    $person->setDateOfBirth($date_of_birth);
+    if($name !== null AND $date_of_birth !== null) {
+        $person->setName($name);
+        $person->setDateOfBirth($date_of_birth);
+    }
 
     // Put into an array
     array_push($musicians, $person);

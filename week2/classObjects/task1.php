@@ -7,8 +7,10 @@
     $age = $_POST["age"];
     // Instantiate an Object an pass values to it
     $person1 = new Person();
-    $person1->setName($first_name, $surname);
-    $person1->setAge($age);
+    if($first_name != null && $surname != null && $age != null){
+        $person1->setName($first_name, $surname);
+        $person1->setAge($age);
+    }
     // Teste the Student Class
     $student = new Student();
     $student->setStudentId("v015008l");

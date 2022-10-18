@@ -14,7 +14,8 @@
         <form action="<?php print $_SERVER['PHP_SELF']?>" method="post">
             <!-- Page 4 -->
             <h4>Display all the information</h4>
-            
+            <!-- Hidden form concept -->
+            <input type="text" value="<?= $name; ?>" name="name_hidden">
         </form>
     </div>
 </body>

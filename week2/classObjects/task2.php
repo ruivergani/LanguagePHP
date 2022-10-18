@@ -1,6 +1,8 @@
 <?php
     include './Musician.php';
     // Collect data variable from form
+    $name = "";
+    $date_of_birth = "";
     $name = $_POST["name"];
     $date_of_birth = $_POST["date_of_birth"];
     // Instantiate 4 new Objects as in the table
@@ -40,7 +42,7 @@
 </head>
 <body>
 <div class="container">
-    <form method="post">
+    <form method="post" action="<?php print $_SERVER['PHP_SELF']?>">
         <fieldset>
             <legend>Personal Details</legend>
                 <label for="name">Name:</label>

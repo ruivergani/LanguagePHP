@@ -8,9 +8,8 @@
         $publisher = $_POST['publisher'];
         $sales = $_POST['sales'];
 
-        $num_tries = (int)$_POST['num_tries'];
-        $num_tries ++;
-
+        $num_tries = 5;
+        
         // Create a new game
         $games[$num_tries] =  new Game();
         $games[$num_tries]->id = $game_id;
@@ -18,10 +17,13 @@
         $games[$num_tries]->publisher = $publisher;
         $games[$num_tries]->sales = $sales;
 
+        $num_tries++;
+
         // Store this new game in the array of games
         // Set Store Object in Session
         $_SESSION['games'] = serialize($games);
-        print_r($games);
+        echo '<script type="text/javascript"> window.open("home.php","_self");</script>'; 
+        $msg = "Object Created."; 
     }
 ?>
 <!DOCTYPE html>

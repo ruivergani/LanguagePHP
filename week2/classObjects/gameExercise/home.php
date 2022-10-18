@@ -4,6 +4,9 @@
     // Create Objects 5 Games
     $games = array(); // using the array function you can populate objects
 
+    // Get Object from Session
+    $games = unserialize($_SESSION['games']);
+
     $games[0] =  new Game();
     $games[0]->id = 1;
     $games[0]->title = 'That Football Game 2015';
@@ -33,9 +36,6 @@
     $games[4]->title = 'Grand Bus Ride Manual';
     $games[4]->publisher = 'Classical Musicians';
     $games[4]->sales = 48.126;
-
-    // Get Object from Session
-    //$games = unserialize($_SESSION['games']);
 ?>
 <!DOCTYPE html>
 <html lang="en">

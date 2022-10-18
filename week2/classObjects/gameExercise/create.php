@@ -1,5 +1,28 @@
 <?php
-    
+    session_start();
+    include ('./Game.php');
+    $msg = "";
+    if(isset($_POST['create'])){ // It checks whether the user clicked create button or not 
+        $game_id = $_POST['game_id'];
+        $title = $_POST['title'];
+        $publisher = $_POST['publisher'];
+        $sales = $_POST['sales'];
+
+        $num_tries = (int)$_POST['num_tries'];
+        $num_tries ++;
+
+        // Create a new game
+        $games[$num_tries] =  new Game();
+        $games[$num_tries]->id = $game_id;
+        $games[$num_tries]->title = $title;
+        $games[$num_tries]->publisher = $publisher;
+        $games[$num_tries]->sales = $sales;
+
+        // Store this new game in the array of games
+        // Set Store Object in Session
+        $_SESSION['games'] = serialize($games);
+        print_r($games);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +49,8 @@
                 <!-- Sales -->
                 <label for="sales">Sales:</label>
                 <input type="number" id="sales" name="sales" placeholder="42.300" required>
+                <!-- Hidden form concept -->
+                <input type="hidden" name="num_tries" value="<?php print $num_tries?>"/> 
                 <!-- Create Button -->
                 <input type="submit" value="Add Game" class="btn-secondary" name="create">
             </fieldset>

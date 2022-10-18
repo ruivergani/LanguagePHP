@@ -2,11 +2,13 @@
     // Define a class Game
     class Game{
         // Properties
-        private $title;
-        private $publisher;
-        private $sales;
+        public $id;
+        public $title;
+        public $publisher;
+        public $sales;
 
-        //Methods
+        // Methods
+        // Set Function
         function setTitle(string $title) {
             $this->title = $title;
         }
@@ -16,6 +18,7 @@
         function setSales(float $sales){
             $this->sales = $sales;
         }
+        // Get Function
         function getTitle(){
             return $this->title;
         }
@@ -24,12 +27,6 @@
         }
         function getSales(){
             return $this->sales;
-        }
-        //Constructor
-        function __construct(){
-            $this->title = "";
-            $this->publisher = "";
-            $this->sales = "";
         }
     }
 ?>

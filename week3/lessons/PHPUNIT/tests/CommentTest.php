@@ -3,6 +3,7 @@
 use PHPUnit\Framework\TestCase; //inherit all the public and protected methods and properties of that class
 
 require_once __DIR__ . '/../Comment.php';
+
 class CommentTest extends TestCase{
     // all functions should start with word test
     public function testAddComment(){

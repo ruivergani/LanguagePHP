@@ -16,4 +16,13 @@ class CommentTest extends TestCase{
         $comment->update("PHP is not great!");
         $this->assertEquals('PHP is not great!', $comment->message());
     }
+    // Task 2
+    public function testException(){
+        $comment = new Comment("<p>PHP is great!</p>");
+        $this->exceptException(InvalidArgumentException::class);
+    }
+    // Task 3
+    public function testGameClass(){
+
+    }
 }

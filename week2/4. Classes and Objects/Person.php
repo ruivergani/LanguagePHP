@@ -2,20 +2,20 @@
     // Define a class Person
     class Person{
         // Properties
-        private $name;
-        private $age;
+        private string $name;
+        private int $age;
 
         //Methods
-        function setName(string $firstName, string $lastName) {
+        function setName(string $firstName, string $lastName): void {
             $this->name = $firstName . ' ' . $lastName;
         }
-        function setAge(int $age){
+        function setAge(int $age): void{
             $this->age = $age;
         }
-        function getName(){
+        function getName(): string{
             return $this->name;
         }
-        function getAge(){
+        function getAge(): int{
             return $this->age;
         }
         //Constructor

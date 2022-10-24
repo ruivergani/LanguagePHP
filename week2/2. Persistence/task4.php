@@ -18,17 +18,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $guessed = $_POST['guessed'] ?? [];
     $word_to_guess = $_POST['word'];
 
-    $word_characters = str_split($word_to_guess);
+    $word_characters = str_split($word_to_guess); // convert string to array
 
-    if (count($word_characters) === count(str_split($word_to_guess)))
-    {
+    if (count($word_characters) === count(str_split($word_to_guess))) {
         echo "<h2>Well done! It took you $guesses guesses</h2>";
     }
 
-    if ($guess != '')
-    {
-        if (!in_array($guess, $word_characters) && !in_array($guess, $guessed))
-        {
+    if ($guess != '') {
+        if (!in_array($guess, $word_characters) && !in_array($guess, $guessed)) {
             $guesses++;
         }
 

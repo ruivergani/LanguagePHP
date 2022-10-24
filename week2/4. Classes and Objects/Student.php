@@ -3,16 +3,15 @@
     class Student extends Person{
         private $studentId;
         // Methods
-        function setStudentId(string $studentId){
+        function setStudentId(string $studentId): void{
             $this->studentId = $studentId;
         }
-        function getStudentId(){
+        function getStudentId(): string{
             return $this->studentId;
         }
         // Constructor
         function __construct(){
-            $this->name = "";
-            $this->age = 0;
+            Person::__construct(); // call Person constructor
             $this->studentId = 0;
         }
     }

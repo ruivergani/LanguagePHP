@@ -4,6 +4,25 @@
     $operation = $_POST["operation"];
 ?>
 
+// This code below is a new way of doing the same code (tutorial resource)
+// if ($_SERVER['REQUEST_METHOD'] == 'POST')
+// {
+//     $numbers = $_POST['number'];
+//     $operator = $_POST['operator'];
+
+//     $output = "$numbers[0] $operator $numbers[1] = ";
+
+//     $output .= match ($operator)
+//     {
+//         '+' => $numbers[0] + $numbers[1],
+//         '-' => $numbers[0] - $numbers[1],
+//         '/' => $numbers[0] / $numbers[1],
+//         '*', 'x' => $numbers[0] * $numbers[1],
+//         '%' => $numbers[0] % $numbers[1],
+//         default => '??'
+//     };
+// }
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

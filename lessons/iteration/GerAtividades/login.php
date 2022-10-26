@@ -2,7 +2,7 @@
 session_start();
 
 if ((empty($_POST['usuario']) OR empty($_POST['senha']))) {
-    header("Location: index.php"); 
+    header("Location: home.php");
 }
 else{
 
@@ -15,7 +15,7 @@ else{
 
 	if($dados == 0) {
 	    $_SESSION['loginErro'] = "Usuário ou Senha Inválido";
-	    header("Location:index.php");
+	    header("Location:home.php");
 	} else {
 	    // Salva os dados encontrados na sessão
 		$_SESSION['usuario'] = $usuario;

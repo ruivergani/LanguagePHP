@@ -34,7 +34,7 @@ if (empty($nome)){
 	$mail->AltBody = "de: {$nome}\nemail:{$email}\nmensagem: {$mensagem}";
 
 	$titulo = 'RECUPERAR DADOS';
-	$link = 'index.php';
+	$link = 'home.php';
 
 	if($mail->send()) {
 		$texto = "Os dados foram enviados para seu e-mail.";

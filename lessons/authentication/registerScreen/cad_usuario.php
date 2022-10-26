@@ -15,7 +15,7 @@ $dados = buscaUsuario($usuario);
 
 require_once ("mensagens.php");
 $titulo = 'CADASTRO DE USUÁRIO';
-$link = 'index.php';
+$link = 'home.php';
 
 if($dados != 0){
 	$_SESSION['nome'] = $_POST['nome'];

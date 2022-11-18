@@ -1,8 +1,8 @@
 <?php
 
-$db = new PDO('mysql:host=localhost;dbname=db_interaction', 'root', '') or die('Unable to connect to the database');
+$db = new PDO('mysql:host=localhost;dbname=Staffordshire', 'root', '') or die('Unable to connect to the database');
 
-$students = $db->query('select * from students')->fetchAll(PDO::FETCH_CLASS);
+$students = $db->query('select * from modules')->fetchAll(PDO::FETCH_CLASS);
 
 ?>
 

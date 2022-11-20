@@ -26,9 +26,16 @@ Route::get('posts/{post}', function ($slug) { // use wildcard to look for post U
         //abort(404); not found page
         return redirect('/');
     }
-    
-    $post = file_get_contents($path);
+
+    // cache the post
+    $post = cache()->remember("posts.{$slug}", 3600, function () use ($path){ // cache for an hour
+        var_dump('file_get_contents'); // show info about the cache variable
+        return file_get_contents($path);
+    });
+
+
     return view('post', [
         'post' => $post
     ]);
-});
+
+})->where('post', '[A-z_\-]+'); // constraints, means only allows letters in URL

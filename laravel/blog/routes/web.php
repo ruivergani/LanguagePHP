@@ -17,6 +17,18 @@ Route::get('/', function () {
     return view('posts');
 });
 
-Route::get('post', function () {
-    return view('post');
+Route::get('posts/{post}', function ($slug) { // use wildcard to look for post URL
+    $path = __DIR__ . "/../resources/posts/{$slug}.html";
+
+    // POST does not exist
+    if (!file_exists($path)) {
+        //ddd('File does not exists'); // die, dump and debug
+        //abort(404); not found page
+        return redirect('/');
+    }
+    
+    $post = file_get_contents($path);
+    return view('post', [
+        'post' => $post
+    ]);
 });

@@ -1,0 +1,14 @@
+{
+  "require": {
+    "ext-PDO": "*",
+    "php": "^7.3|^8.0",
+    "phpunit/phpunit": "^8",
+    "laravel/installer": "^4.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Modules\\": "app/",
+      "Core\\": "core/"
+    }
+  }
+}

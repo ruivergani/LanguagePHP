@@ -18,7 +18,7 @@ class CustomAuthController extends Controller
         // Validation for the form
         $regex = '/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/';
         $request->validate([
-            'username'=>'required|min:1|max:20',
+            'username'=>'required|min:1|max:20|unique:users',
             'password'=>'required|min:5|max:20',
             'email'=>'required|email|unique:users',
             'url' => 'required|regex:'.$regex,
@@ -33,7 +33,7 @@ class CustomAuthController extends Controller
         $user->dob = $request->dob;
         $res = $user->save(); // this saves the data
         if($res){
-            return back()->with('success', 'You have registered successfully');
+            return redirect('dashboard')->with('success', 'You have registered successfully');
         }
         else{
             return back()->with('fail', 'There was an error');

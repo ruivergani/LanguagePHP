@@ -30,15 +30,26 @@
                 <!-- Form from Staffordshire University -->
                 <h4>Login Form</h4>
                 <hr>
-                <form method="post">
+                <form method="post" action="{{route('login-user')}}">
+                    @if(Session::has('success'))
+                        <div class="alert alert-success">{{Session::get('success')}}</div>
+                    @endif
+                    @if(Session::has('fail'))
+                        <div class="alert alert-danger">{{Session::get('fail')}}</div>
+                    @endif
+                    @csrf <!-- token to secure application -->
                     <fieldset>
                         <div class="mt-3 form-group">
                             <label for="username">Username:</label>
-                            <input type="text" required name="username" id="username" class="form-control">
+                            <input type="text" required name="username" id="username" class="form-control" value="{{old('username')}}">
+                            <br>
+                            <span class="text-danger">@error('username') {{$message}} @enderror</span>
                         </div>
                         <div class="mt-3 form-group">
                             <label for="password">Password:</label>
-                            <input type="password" required name="password" id="password" class="form-control">
+                            <input type="password" required name="password" id="password" class="form-control" value="{{old('password')}}">
+                            <br>
+                            <span class="text-danger">@error('password') {{$message}} @enderror</span>
                         </div>
                     </fieldset>
                     <div class="mt-3">

@@ -33,7 +33,7 @@ class CustomAuthController extends Controller
         $user->dob = $request->dob;
         $res = $user->save(); // this saves the data
         if($res){
-            return redirect('dashboard')->with('success', 'You have registered successfully');
+            return redirect('login')->with('success', 'You have registered successfully');
         }
         else{
             return back()->with('fail', 'There was an error');

@@ -20,4 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/pizza', [App\Http\Controllers\PizzaController::class, 'index'])->name('pizza.index');
+
+// Pizza Routes
+Route::get('/pizza', [App\Http\Controllers\PizzaController::class, 'index'])->name('pizza.index'); // => Home List of Pizzas
+Route::get('/pizza/create', [App\Http\Controllers\PizzaController::class, 'create'])->name('pizza.create'); // => Create Form Pizza
+Route::post('/pizza/store', [App\Http\Controllers\PizzaController::class, 'store'])->name('pizza.store'); // => Submit Data Route

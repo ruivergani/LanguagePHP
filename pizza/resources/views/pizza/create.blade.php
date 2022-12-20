@@ -17,9 +17,16 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Pizza</div>
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        @foreach ($errors->all() as $error)
+                            <p> {{$error}} </p>
+                        @endforeach
+                    </div>
+                @endif
                 <!-- Route Name to Store File /pizza/store  -->
                 <form action="{{route('pizza.store')}}" method="post">@csrf
-                    <!-- (using route(pizza.store) is better because will never change, the link could be changed later but the name of route will not) -->
+                    <!-- use route(pizza.store) instead of /pizza/store in case the link path changes -->
                     <div class="card-body">
                         <div class="form-group mb-3">
                             <label for="name" class="mb-1">Name of Pizza</label>

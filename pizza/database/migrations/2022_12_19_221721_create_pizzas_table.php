@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->integer('small_pizza_price');
-            $table->integer('medium_pizza_price');
-            $table->integer('large_pizza_price');
+            $table->decimal('small_pizza_price');
+            $table->decimal('medium_pizza_price');
+            $table->decimal('large_pizza_price');
             $table->string('productRadios');
             $table->string('category');
             $table->string('image');

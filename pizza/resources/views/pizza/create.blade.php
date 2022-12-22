@@ -13,19 +13,24 @@
                    </ul>
                 </div>
             </div>
+            <!-- Validation Message Errors -->
+            @if (count($errors) > 0)
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <div class="alert alert-danger">
+                            @foreach ($errors->all() as $error)
+                                <p> {{$error}} </p>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            @endif
         </div>
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Pizza</div>
-                @if (count($errors) > 0)
-                    <div class="alert alert-danger">
-                        @foreach ($errors->all() as $error)
-                            <p> {{$error}} </p>
-                        @endforeach
-                    </div>
-                @endif
                 <!-- Route Name to Store File /pizza/store  -->
-                <form action="{{route('pizza.store')}}" method="post">@csrf
+                <form action="{{route('pizza.store')}}" method="post" enctype="multipart/form-data">@csrf
                     <!-- use route(pizza.store) instead of /pizza/store in case the link path changes -->
                     <div class="card-body">
                         <div class="form-group mb-3">
@@ -38,9 +43,9 @@
                         </div>
                         <div class="form-inline col-md-4 mb-3">
                             <label class="mb-1">Pizza Price (£)</label>
-                            <input type="number" class="form-control mb-2" placeholder="Small Size" name="small_pizza_price">
-                            <input type="number" class="form-control mb-2" placeholder="Medium Size" name="medium_pizza_price">
-                            <input type="number" class="form-control mb-2" placeholder="Large Size" name="large_pizza_price">
+                            <input type="number" step="0.01" class="form-control mb-2" placeholder="Small Size" name="small_pizza_price">
+                            <input type="number" step="0.01" class="form-control mb-2" placeholder="Medium Size" name="medium_pizza_price">
+                            <input type="number" step="0.01" class="form-control mb-2" placeholder="Large Size" name="large_pizza_price">
                         </div>
                         <div class="form-group mb-3">
                             <label for="description" class="mb-1">Category</label>

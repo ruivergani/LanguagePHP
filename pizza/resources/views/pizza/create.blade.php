@@ -8,8 +8,8 @@
                 <div class="card-header">Menu</div>
                 <div class="card-body">
                    <ul class="list-group">
-                        <a href="" class="list-group-item list-group-item-action">View</a>
-                        <a href="" class="list-group-item list-group-item-action">Create</a>
+                        <a href="{{route('pizza.index')}}" class="list-group-item list-group-item-action">View</a>
+                        <a href="{{route('pizza.create')}}" class="list-group-item list-group-item-action">Create</a>
                    </ul>
                 </div>
             </div>
@@ -55,18 +55,6 @@
                                 <option value="nonvegetarian">Non Vegetarian</option>
                                 <option value="tradicional">Tradicional Pizza</option>
                             </select>
-                        </div>
-                        <div class="form-check mb-3">
-                            <input class="form-check-input" type="radio" name="productRadios" id="gridRadios1" value="collection" required>
-                            <label class="form-check-label" for="gridRadios1">
-                              Collection
-                            </label>
-                        </div>
-                        <div class="form-check mb-3">
-                            <input class="form-check-input" type="radio" name="productRadios" id="gridRadios2" value="delivery">
-                            <label class="form-check-label" for="gridRadios2">
-                              Delivery
-                            </label>
                         </div>
                         <div class="form-group mb-3">
                             <label for="image" class="mb-1">Image</label>

@@ -16,7 +16,7 @@ class PizzaController extends Controller
     public function index()
     {
         $pizzas = Pizza::get(); // get all the pizzas available
-        return view('pizza.index', compact('pizzas'));
+        return view('pizza.index', compact('pizzas')); // pass variable in the view
     }
 
     /**
@@ -71,7 +71,9 @@ class PizzaController extends Controller
      */
     public function edit($id)
     {
-        //
+        //Find the pizza and enter the view
+        $pizza = Pizza::find($id);
+        return view('pizza.edit', compact('pizza'));
     }
 
     /**

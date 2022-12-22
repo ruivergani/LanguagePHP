@@ -24,4 +24,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Pizza Routes
 Route::get('/pizza', [App\Http\Controllers\PizzaController::class, 'index'])->name('pizza.index'); // => Home List of Pizzas
 Route::get('/pizza/create', [App\Http\Controllers\PizzaController::class, 'create'])->name('pizza.create'); // => Create Form Pizza
+Route::get('/pizza/{id}/edit', [App\Http\Controllers\PizzaController::class, 'edit'])->name('pizza.edit'); // => Edit Data Route
 Route::post('/pizza/store', [App\Http\Controllers\PizzaController::class, 'store'])->name('pizza.store'); // => Submit Data Route

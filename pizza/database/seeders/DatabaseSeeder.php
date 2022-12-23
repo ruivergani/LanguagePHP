@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,5 +21,11 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        $user = new User;
+        $user->name = 'admin';
+        $user->email = 'admin@gmail.com';
+        $user->password = bcrypt('admin1234');
+        $user->is_admin = 1;
+        $user->save();
     }
 }

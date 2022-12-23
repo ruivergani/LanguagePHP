@@ -5,9 +5,22 @@
     <div class="row justify-content-center">
 
         <div class="col-md-8">
+            <!-- Validation Message Errors -->
+            @if (count($errors) > 0)
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <div class="alert alert-danger">
+                            @foreach ($errors->all() as $error)
+                                <p> {{$error}} </p>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            @endif
             <div class="card">
                 <div class="card-header">Edit Pizza</div>
-                <form action="{{route('pizza.store')}}" method="post" enctype="multipart/form-data">@csrf
+                <form action="{{route('pizza.update', $pizza->id)}}" method="post" enctype="multipart/form-data">@csrf
+                    @method('PUT') <!-- the method you are using -->
                     <div class="card-body">
                         <div class="form-group mb-3">
                             <label for="name" class="mb-1">Name of Pizza</label>

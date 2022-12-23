@@ -14,15 +14,17 @@
                 <div class="card-body">
                     <table class="table table-bordered">
                         <thead>
-                          <tr>
+                          <tr class="text-center">
                             <th scope="col">User</th>
                             <th scope="col">Phone/Email</th>
                             <th scope="col">Date/Time</th>
                             <th scope="col">Pizza</th>
-                            <th scope="col">Small Pizza</th>
-                            <th scope="col">Medium Pizza</th>
-                            <th scope="col">Large Pizza</th>
+                            <th scope="col">S. Pizza</th>
+                            <th scope="col">M. Pizza</th>
+                            <th scope="col">L. Pizza</th>
+                            <th scope="col">Delivery/Collection</th>
                             <th scope="col">Message</th>
+                            <th scope="col">Total(£)</th>
                             <th scope="col">Status</th>
                             <th scope="col">Accept</th>
                             <th scope="col">Reject</th>
@@ -33,15 +35,26 @@
                             <!-- Retrieve data from order table -->
                             @foreach ($orders as $order)
                                 <tr>
-                                    <td>{{$order->user->name}}</td> <!-- retrieve data frmo user table -->
-                                    <td>{{$order->user->email}}</td>
-                                    <td>{{$order->date}} / {{$order->time}}</td>
-                                    <td>{{$order->pizza->name}}</td>
-                                    <td>{{$order->small_pizza}}</td>
-                                    <td>{{$order->medium_pizza}}</td>
-                                    <td>{{$order->large_pizza}}</td>
-                                    <td>{{$order->body}}</td>
+                                    <td class="text-center">{{$order->user->name}}</td> <!-- retrieve data frmo user table -->
+                                    <td class="text-center">{{$order->user->email}} / {{$order->phone}}</td>
+                                    <td class="text-center">{{$order->date}} / {{$order->time}}</td>
+                                    <td class="text-center">{{$order->pizza->name}}</td>
+                                    <td class="text-center">{{$order->small_pizza}}</td>
+                                    <td class="text-center">{{$order->medium_pizza}}</td>
+                                    <td class="text-center">{{$order->large_pizza}}</td>
+                                    <td class="text-center">{{$order->productRadios}}</td>
+                                    <td class="text-center">{{$order->body}}</td>
+                                    <td>
+                                        <!-- Calculations for total amount order -->
+                                        ${{
+                                            ($order->pizza->small_pizza_price * $order->small_pizza) +
+                                            ($order->pizza->medium_pizza_price * $order->medium_pizza) +
+                                            ($order->pizza->large_pizza_price * $order->large_pizza)
+                                        }}
+
+                                    </td>
                                     <td>{{$order->status}}</td>
+
                                     <form action="{{route('order.status', $order->id)}}" method="post">@csrf
                                         <td>
                                             <input type="submit" name="status" value="Accepted" class="btn btn-primary btn-sm">

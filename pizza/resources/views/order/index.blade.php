@@ -30,20 +30,23 @@
                           </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row"></th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><button class="btn btn-primary">Accept</button></td>
-                                <td><button class="btn btn-primary">Reject</button></td>
-                                <td><button class="btn btn-primary">Completed</button></td>
-                            </tr>
+                            <!-- Retrieve data from order table -->
+                            @foreach ($orders as $order)
+                                <tr>
+                                    <td>{{$order->user->name}}</td> <!-- retrieve data frmo user table -->
+                                    <td>{{$order->user->email}}</td>
+                                    <td>{{$order->date}} / {{$order->time}}</td>
+                                    <td>{{$order->pizza->name}}</td>
+                                    <td>{{$order->small_pizza}}</td>
+                                    <td>{{$order->medium_pizza}}</td>
+                                    <td>{{$order->large_pizza}}</td>
+                                    <td>{{$order->body}}</td>
+                                    <td>{{$order->status}}</td>
+                                    <td><button class="btn btn-primary">Accept</button></td>
+                                    <td><button class="btn btn-primary">Reject</button></td>
+                                    <td><button class="btn btn-primary">Completed</button></td>
+                                </tr>
+                            @endforeach
                         </tbody>
                       </table>
 

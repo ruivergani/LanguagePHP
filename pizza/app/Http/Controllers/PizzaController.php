@@ -94,7 +94,6 @@ class PizzaController extends Controller
         else{
             $path = $pizza->image; // previous path of the image
         }
-        $pizza = new Pizza;
         $pizza->name = $request->name;
         $pizza->description = $request->description;
         $pizza->small_pizza_price = $request->small_pizza_price;
@@ -114,6 +113,7 @@ class PizzaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Pizza::find($id)->delete();
+        return redirect()->route('pizza.index')->with('message', 'Pizza deleted successfully!');
     }
 }

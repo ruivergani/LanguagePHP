@@ -16,7 +16,7 @@ class PizzaController extends Controller
      */
     public function index()
     {
-        $pizzas = Pizza::get(); // get all the pizzas available
+        $pizzas = Pizza::paginate(5); // get all the pizzas available
         return view('pizza.index', compact('pizzas')); // pass variable in the view
     }
 

@@ -21,7 +21,7 @@ Route::get('/pizza/{id}', [App\Http\Controllers\FrontendController::class, 'show
 Route::post('/order/store', [App\Http\Controllers\FrontendController::class, 'store'])->name('order.store'); // Order Store Form Route
 
 // Accessible by Admin only
-Route::group(['middleware' => 'auth','admin'], function(){
+Route::group(['prefix'=>'admin','middleware' => ['auth','admin']], function(){
     // Pizza Routes
     Route::get('/pizza', [App\Http\Controllers\PizzaController::class, 'index'])->name('pizza.index'); // => Home List of Pizzas
     Route::get('/pizza/create', [App\Http\Controllers\PizzaController::class, 'create'])->name('pizza.create'); // => Create Form Pizza

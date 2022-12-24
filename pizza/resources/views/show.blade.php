@@ -13,14 +13,14 @@
                             <div class="form-group">
                                 <p>Name: {{auth()->user()->name}}</p>
                                 <p>E-mail: {{auth()->user()->email}}</p>
-                                <p>Phone number: <input type="number" class="form-control" name="phone"></p>
+                                <p>Phone number: <input type="number" class="form-control" name="phone" required></p>
                                 <p>Quantity Small Pizza: <input type="number" class="form-control" name="small_pizza" value="0"></p>
                                 <p>Quantity Medium Pizza: <input type="number" class="form-control" name="medium_pizza" value="0"></p>
                                 <p>Quantity Large Pizza: <input type="number" class="form-control" name="large_pizza" value="0"></p>
                                 <p><input type="hidden" name="pizza_id" value="{{$pizza->id}}"></p>
-                                <p>Date: <input type="date" class="form-control" name="date"></p>
-                                <p>Time: <input type="time" class="form-control" name="time"></p>
-                                <p>Message: <textarea name="body" class="form-control"></textarea></p>
+                                <p>Date: <input type="date" class="form-control" name="date" required></p>
+                                <p>Time: <input type="time" class="form-control" name="time" required></p>
+                                <p>Message: <textarea name="body" class="form-control" required></textarea></p>
 
                                 <!-- Radio Button -->
                                 <div class="form-check mb-3">
@@ -36,11 +36,21 @@
                                     </label>
                                 </div>
                                 <!-- Submit Button -->
-                                <p>
+                                <p class="text-center">
                                     <button class="btn btn-danger" type="submit">
                                         Make Order
                                     </button>
                                 </p>
+                                @if (session('message'))
+                                    <div class="alert alert-success" role="alert">
+                                        {{ session('message') }}
+                                    </div>
+                                @endif
+                                @if (session('errormessage'))
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ session('errormessage') }}
+                                    </div>
+                                @endif
                             </div>
                         </form>
                     @else

@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Order extends Model
 {
     use HasFactory;
+    protected $guarded=[]; // as empty route
+
     // Create relationship to retrieve data from other tables (models)
     public function user(){
         return $this->belongsTo(User::class);
@@ -17,5 +19,6 @@ class Order extends Model
     public function pizza(){
         return $this->belongsTo(Pizza::class);
     }
+
 
 }

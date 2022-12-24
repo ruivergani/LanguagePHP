@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <!-- Form Order (only logged users) -->
                     @if(Auth::check())
-                        <form method="post" action="">@csrf
+                        <form method="post" action="{{route('order.store')}}">@csrf
                             <div class="form-group">
                                 <p>Name: {{auth()->user()->name}}</p>
                                 <p>E-mail: {{auth()->user()->email}}</p>
@@ -17,6 +17,11 @@
                                 <p>Quantity Small Pizza: <input type="number" class="form-control" name="small_pizza" value="0"></p>
                                 <p>Quantity Medium Pizza: <input type="number" class="form-control" name="medium_pizza" value="0"></p>
                                 <p>Quantity Large Pizza: <input type="number" class="form-control" name="large_pizza" value="0"></p>
+                                <p><input type="hidden" name="pizza_id" value="{{$pizza->id}}"></p>
+                                <p>Date: <input type="date" class="form-control" name="date"></p>
+                                <p>Time: <input type="time" class="form-control" name="time"></p>
+                                <p>Message: <textarea name="body" class="form-control"></textarea></p>
+
                                 <!-- Radio Button -->
                                 <div class="form-check mb-3">
                                     <input class="form-check-input" type="radio" name="productRadios" id="gridRadios1" value="collection" required>

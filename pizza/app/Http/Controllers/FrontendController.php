@@ -8,9 +8,15 @@ use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
-    public function index(){
-        $pizzas = Pizza::latest()->get();
+    public function index(Request $request){
+        //dd($request->category);
+        if(!$request->category){
+            $pizzas = Pizza::latest()->get();
+            return view('frontpage', compact('pizzas'));
+        }
+        $pizzas = Pizza::where('category', $request->category)->get();
         return view('frontpage', compact('pizzas'));
+
     }
     public function show($id){
         $pizza = Pizza::find($id);

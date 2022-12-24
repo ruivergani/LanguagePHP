@@ -8,10 +8,12 @@
                 <div class="card-header">Menu</div>
                 <div class="card-body">
                     <ul class="list-group">
-                        <a href="" class="list-group-item list-group-item-action">Category 1</a>
-                        <a href="" class="list-group-item list-group-item-action">Category 2</a>
-                        <a href="" class="list-group-item list-group-item-action">Category 3</a>
-                        <a href="" class="list-group-item list-group-item-action">Category 4</a>
+                        <form action="{{route('frontpage')}}" method="get">
+                            <p class="mb-3"><a href="/">All Pizzas</a></p>
+                            <input type="submit" value="Vegetarian" name="category" class="list-group-item list-group-item-action">
+                            <input type="submit" value="Nonvegetarian" name="category" class="list-group-item list-group-item-action">
+                            <input type="submit" value="Tradicional" name="category" class="list-group-item list-group-item-action">
+                        </form>
                     </ul>
                 </div>
             </div>

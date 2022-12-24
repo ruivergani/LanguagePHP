@@ -44,7 +44,7 @@
                                     <td class="text-center">{{$order->large_pizza}}</td>
                                     <td class="text-center">{{$order->productRadios}}</td>
                                     <td class="text-center">{{$order->body}}</td>
-                                    <td>
+                                    <td class="text-center">
                                         <!-- Calculations for total amount order -->
                                         ${{
                                             ($order->pizza->small_pizza_price * $order->small_pizza) +
@@ -53,7 +53,7 @@
                                         }}
 
                                     </td>
-                                    <td>{{$order->status}}</td>
+                                    <td class="text-center">{{$order->status}}</td>
 
                                     <form action="{{route('order.status', $order->id)}}" method="post">@csrf
                                         <td>

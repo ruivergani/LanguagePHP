@@ -13,13 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); // Home Dashboard Route
+Route::get('/', [App\Http\Controllers\FrontendController::class, 'index'])->name('frontpage'); // Front Page Route
+Route::get('/pizza/{id}', [App\Http\Controllers\FrontendController::class, 'show'])->name('pizza.show'); // Order Form Route
 
 // Accessible by Admin only
 Route::group(['middleware' => 'auth','admin'], function(){

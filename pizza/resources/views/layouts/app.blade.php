@@ -62,6 +62,9 @@
                                     @endif
 
                                     @if (auth()->user()->is_admin == 1)
+                                        <a class="dropdown-item" href="{{route('customers')}}">
+                                            {{ __('All customers') }}
+                                        </a>
                                         <a class="dropdown-item" href="{{route('user.order')}}">
                                             {{ __('User order') }}
                                         </a>

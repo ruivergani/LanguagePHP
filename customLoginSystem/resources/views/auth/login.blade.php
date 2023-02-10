@@ -31,6 +31,7 @@
                 <h4>Login Form</h4>
                 <hr>
                 <form method="post" action="{{route('login-user')}}">
+                    <!-- Session with success message -->
                     @if(Session::has('success'))
                         <div class="alert alert-success">{{Session::get('success')}}</div>
                     @endif

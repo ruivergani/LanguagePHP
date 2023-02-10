@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">Order Item</div>
                 <div class="card-body">
-                    <!-- Form Order (only logged users) -->
+                    <!-- Validate only logged in users (Auth::check() will validate if the user is logged or not to display the following form) -->
                     @if(Auth::check())
                         <form method="post" action="{{route('order.store')}}">@csrf
                             <div class="form-group">
@@ -46,7 +46,7 @@
                                     Delivery
                                     </label>
                                 </div>
-                                <!-- Submit Button -->
+                                <!-- Submit Button (submit the form) -->
                                 <p class="text-center">
                                     <button class="btn btn-danger" type="submit">
                                         Make Order

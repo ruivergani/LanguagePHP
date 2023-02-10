@@ -24,10 +24,11 @@
                           </tr>
                         </thead>
                         <tbody>
-                            <!-- Retrieve data from order table -->
+                            <!-- Loop to retrieve data from Order Database Table -->
                             @foreach ($orders as $order)
                                 <tr>
-                                    <td class="text-center">{{$order->user->name}}</td> <!-- retrieve data frmo user table -->
+                                    <td class="text-center">{{$order->user->name}}</td>
+                                    <!-- this is how you get data from the USER table which is not in the Order Table (the concept is the same as Foreign Key) -->
                                     <td class="text-center">{{$order->user->email}} / {{$order->phone}}</td>
                                     <td class="text-center">{{$order->date}} / {{$order->time}}</td>
                                     <td class="text-center">{{$order->pizza->name}}</td>
@@ -37,16 +38,14 @@
                                     <td class="text-center">{{$order->productRadios}}</td>
                                     <td class="text-center">{{$order->body}}</td>
                                     <td class="text-center">
-                                        <!-- Calculations for total amount order -->
+                                        <!-- Sum all the prices from the input selected (small, medium and large pizza) -->
                                         ${{
                                             ($order->pizza->small_pizza_price * $order->small_pizza) +
                                             ($order->pizza->medium_pizza_price * $order->medium_pizza) +
                                             ($order->pizza->large_pizza_price * $order->large_pizza)
                                         }}
-
                                     </td>
                                     <td class="text-center">{{$order->status}}</td>
-
                                 </tr>
                             @endforeach
                         </tbody>

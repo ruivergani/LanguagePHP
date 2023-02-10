@@ -16,11 +16,11 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        // Check against the database is_admin collumn set to 1 or 0
+        // Check if the is_admin collumn has been set to 1 (admin) or 0 (not admin)
         if(auth()->user()->is_admin == 1){
             return $next($request);
         }
+        // Otherwise return redirect to login
         return redirect('login');
-
     }
 }

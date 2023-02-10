@@ -11,6 +11,7 @@ return new class extends Migration
      *
      * @return void
      */
+    // This is a migration to add the phone columns to the order table
     public function up()
     {
         Schema::table('orders', function (Blueprint $table) {

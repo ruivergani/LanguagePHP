@@ -84,11 +84,14 @@ class UserOrderController extends Controller
     {
         //
     }
+    // Feature to change the status (column) in the system
+    // When the user clicks in the button to change status from pending to accepted, rejected and completed.
     public function changeStatus(Request $request, $id){
         $order = Order::find($id);
         Order::where('id', $id)->update(['status'=>$request->status]);
         return back();
     }
+    // Send to the view all the users that are not admin
     public function customers(){
         $customers = User::where('is_admin', 0)->get();
         return view('customers', compact('customers'));

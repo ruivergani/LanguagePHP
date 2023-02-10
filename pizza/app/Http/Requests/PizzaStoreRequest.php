@@ -21,6 +21,9 @@ class PizzaStoreRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
+
+     // This file is responsible for the validation in the table or data input (server side view)
+     // All the fields below must have the same name as the .HTML form fields and must be the same as the database
     public function rules()
     {
         return [
@@ -30,7 +33,7 @@ class PizzaStoreRequest extends FormRequest
             'medium_pizza_price'=>'required|numeric',
             'large_pizza_price'=>'required|numeric',
             'category'=>'required',
-            'image'=>'required|mimes:png,jpeg,jpg'
+            'image'=>'required|mimes:png,jpeg,jpg' //validate image extension
         ];
     }
 }

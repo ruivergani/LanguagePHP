@@ -35,10 +35,10 @@
                           </tr>
                         </thead>
                         <tbody>
-                            <!-- Retrieve data from order table -->
+                            <!-- Retrieve Data from Order Table (Database) -->
                             @foreach ($orders as $order)
                                 <tr>
-                                    <td class="text-center">{{$order->user->name}}</td> <!-- retrieve data frmo user table -->
+                                    <td class="text-center">{{$order->user->name}}</td> <!-- this is how you get data from the USER table which is not in the Order Table (the concept is the same as Foreign Key) -->
                                     <td class="text-center">{{$order->user->email}} / {{$order->phone}}</td>
                                     <td class="text-center">{{$order->date}} / {{$order->time}}</td>
                                     <td class="text-center">{{$order->pizza->name}}</td>

@@ -1,3 +1,4 @@
+<!-- Using the Blade layout you can import documents such as layouts or section of content -->
 @extends('layouts.app')
 
 @section('content')
@@ -13,7 +14,7 @@
                    </ul>
                 </div>
             </div>
-            <!-- Validation Message Errors -->
+            <!-- Validation Message Errors = use PHP to return the errors in the form -->
             @if (count($errors) > 0)
                 <div class="card mt-5">
                     <div class="card-body">
@@ -28,8 +29,10 @@
         </div>
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Pizza</div>
+                <div class="card-header">Create Pizza</div>
                 <!-- Route Name to Store File /pizza/store  -->
+                <!-- Form below represents the creation of a Pizza -->
+                <!-- When you make a POST request you have to encode the data that forms the body of the request using multipart/form-data -->
                 <form action="{{route('pizza.store')}}" method="post" enctype="multipart/form-data">@csrf
                     <!-- use route(pizza.store) instead of /pizza/store in case the link path changes -->
                     <div class="card-body">

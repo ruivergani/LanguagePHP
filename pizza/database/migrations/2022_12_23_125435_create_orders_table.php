@@ -11,6 +11,8 @@ return new class extends Migration
      *
      * @return void
      */
+
+    // The following schema will be responsible to create the orders table
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {

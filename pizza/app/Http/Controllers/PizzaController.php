@@ -16,8 +16,8 @@ class PizzaController extends Controller
      */
     public function index()
     {
-        $pizzas = Pizza::paginate(5); // get all the pizzas available
-        return view('pizza.index', compact('pizzas')); // pass variable in the view
+        $pizzas = Pizza::paginate(6); // Get all the pizzas available using paginate (more than 6 will be created another page)
+        return view('pizza.index', compact('pizzas')); // Use the variable pizzas in the view
     }
 
     /**
@@ -27,7 +27,7 @@ class PizzaController extends Controller
      */
     public function create()
     {
-        return view('pizza.create');
+        return view('pizza.create'); // Function to return the create piza view
     }
 
     /**
@@ -38,9 +38,9 @@ class PizzaController extends Controller
      */
     public function store(PizzaStoreRequest $request)
     {
-        //dd($request->all()); // => Check the data response
+        //dd($request->all()); // => Using Dump and Die debugging tool you can check the response data
         $path = $request->image->store('public/pizza');
-        // Create data for the pizza database
+        // This is how
         Pizza::create([
             'name' => $request->name,
             'description' => $request->description,
@@ -72,7 +72,7 @@ class PizzaController extends Controller
      */
     public function edit($id)
     {
-        //Find the pizza and enter the view
+        // Use the Pizza class and the find method to find the pizza and after edit the returned pizza - redirect to the view edit
         $pizza = Pizza::find($id);
         return view('pizza.edit', compact('pizza'));
     }
@@ -87,12 +87,12 @@ class PizzaController extends Controller
     public function update(PizzaUpdateRequest $request, $id) // change normal Request to a new class (personalized validations)
     {
         $pizza = Pizza::find($id);
-        // Check if user wants to update image
+        // Check if user wants to update image or not
         if($request->has('image')){
-            $path = $request->image->store('public/pizza'); // new path of the image
+            $path = $request->image->store('public/pizza'); // create a new path to the image
         }
         else{
-            $path = $pizza->image; // previous path of the image
+            $path = $pizza->image; // maintain the same path to the image
         }
         $pizza->name = $request->name;
         $pizza->description = $request->description;
@@ -101,8 +101,8 @@ class PizzaController extends Controller
         $pizza->large_pizza_price = $request->large_pizza_price;
         $pizza->category = $request->category;
         $pizza->image = $path;
-        $pizza->save();
-        return redirect()->route('pizza.index')->with('message', 'Pizza updated successfully!');
+        $pizza->save(); // function to save all data input
+        return redirect()->route('pizza.index')->with('message', 'Pizza updated successfully!'); // function to redirect the pizza index and return a message
     }
 
     /**
@@ -113,6 +113,7 @@ class PizzaController extends Controller
      */
     public function destroy($id)
     {
+        // Same concept as edit but in this case you are deleting the pizza
         Pizza::find($id)->delete();
         return redirect()->route('pizza.index')->with('message', 'Pizza deleted successfully!');
     }

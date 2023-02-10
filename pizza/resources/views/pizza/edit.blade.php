@@ -19,8 +19,10 @@
             @endif
             <div class="card">
                 <div class="card-header">Edit Pizza</div>
+                <!-- You have to include in the route the ID of the pizza to be updated -->
                 <form action="{{route('pizza.update', $pizza->id)}}" method="post" enctype="multipart/form-data">@csrf
-                    @method('PUT') <!-- the method you are using -->
+                    <!-- Laravel makes it easy to protect your application from cross-site request forgery (CSRF) attacks. -->
+                    @method('PUT') <!-- When the method you are using is not get you have to input here -->
                     <div class="card-body">
                         <div class="form-group mb-3">
                             <label for="name" class="mb-1">Name of Pizza</label>
@@ -48,6 +50,7 @@
                         <div class="form-group mb-3">
                             <label for="image" class="mb-1">Image</label>
                             <input type="file" class="form-control" name="image">
+                            <!-- This is how you link and store an image URL -->
                             <img src="{{Storage::url($pizza->image)}}" width="80" alt="">
                         </div>
                         <div class="form-group text-center">

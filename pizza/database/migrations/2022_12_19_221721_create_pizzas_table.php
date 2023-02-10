@@ -11,6 +11,7 @@ return new class extends Migration
      *
      * @return void
      */
+    // The database schema to create the pizzas all columns required by the software
     public function up()
     {
         Schema::create('pizzas', function (Blueprint $table) {
@@ -20,9 +21,8 @@ return new class extends Migration
             $table->decimal('small_pizza_price');
             $table->decimal('medium_pizza_price');
             $table->decimal('large_pizza_price');
-            $table->string('productRadios');
-            $table->string('category');
-            $table->string('image');
+            $table->string('category'); // type of category such as vegetarian / traditional
+            $table->string('image'); // image for the pizza
             $table->timestamps();
         });
     }

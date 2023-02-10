@@ -21,6 +21,7 @@ class PizzaUpdateRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
+    // Same concept as store request you can input different validations for the Update method
     public function rules()
     {
         return [

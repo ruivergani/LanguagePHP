@@ -22,11 +22,12 @@
                           </tr>
                         </thead>
                         <tbody>
-                            <!-- Retrieve data from customer table -->
+                            <!-- For each loop to retrieve customer data from the database -->
                             @foreach ($customers as $customer)
                                 <tr>
                                     <td class="text-center">{{$customer->name}}</td>
                                     <td class="text-center">{{$customer->email}}</td>
+                                    <!-- Convert the data from the database to the correct format -->
                                     <td class="text-center">{{ \Carbon\Carbon::parse($customer->created_at)->format('M d Y')}}</td>
                                 </tr>
                             @endforeach

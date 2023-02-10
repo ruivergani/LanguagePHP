@@ -14,9 +14,11 @@ class HTTPTest extends TestCase
         $response = $this->get('/');
         $response->assertStatus(200);
     }
-    public function test_the_homepage()
+    public function test_the_homepage_return_a_successful_redirect_response()
     {
         $response = $this->get('/home');
-        $response->assertStatus(302);
+        $response->assertStatus(302); // Network Status redirect
+        $response->assertRedirect('/login');
     }
+
 }

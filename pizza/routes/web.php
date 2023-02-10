@@ -12,15 +12,21 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Auth::routes();
+/*
+    This file is where you put all the routes that are for the web file.
+    The following routes accept GET / POST / DELETE method
+*/
+// Home Dashboard Route (HomeController)
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Front Page Route
+Route::get('/', [App\Http\Controllers\FrontendController::class, 'index'])->name('frontpage');
+// Order(Table) Form Route = using {id} to pass in the URL the ID of each pizza
+Route::get('/pizza/{id}', [App\Http\Controllers\FrontendController::class, 'show'])->name('pizza.show');
+// Order Store Form Route
+Route::post('/order/store', [App\Http\Controllers\FrontendController::class, 'store'])->name('order.store');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); // Home Dashboard Route
-Route::get('/', [App\Http\Controllers\FrontendController::class, 'index'])->name('frontpage'); // Front Page Route
-Route::get('/pizza/{id}', [App\Http\Controllers\FrontendController::class, 'show'])->name('pizza.show'); // Order Form Route
-Route::post('/order/store', [App\Http\Controllers\FrontendController::class, 'store'])->name('order.store'); // Order Store Form Route
-
-// Accessible by Admin only
+// Put the Route in a group to be accessible by only Admin
 Route::group(['prefix'=>'admin','middleware' => ['auth','admin']], function(){
     // Pizza Routes
     Route::get('/pizza', [App\Http\Controllers\PizzaController::class, 'index'])->name('pizza.index'); // => Home List of Pizzas

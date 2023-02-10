@@ -24,7 +24,7 @@
                     </a>
                 </div>
                 <div class="card-body">
-                    <!-- Pizza created or not message -->
+                    <!-- Message to display if pizza has been created or not -->
                     @if (session('message'))
                         <div class="alert alert-success" role="alert">
                             {{ session('message') }}
@@ -46,6 +46,7 @@
                           </tr>
                         </thead>
                         <tbody>
+                            <!-- In case there is more than 1 pizza you enter the following loop -->
                             @if(count($pizzas)>0)
                                 @foreach($pizzas as $key=> $pizza)
                                     <tr>
@@ -57,12 +58,12 @@
                                         <td>{{$pizza->small_pizza_price}}</td>
                                         <td>{{$pizza->medium_pizza_price}}</td>
                                         <td>{{$pizza->large_pizza_price}}</td>
-                                        <!-- Pizza edit method and also id -->
+                                        <!-- Pizza Edit method (passing the ID to edit and also delete) -->
                                         <td><a href="{{route('pizza.edit',$pizza->id)}}"><button class="btn btn-primary">Edit</button></a></td>
                                         <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $pizza->id }}">Delete</button></td>
                                         <!-- Modal -->
                                         <div class="modal fade" id="exampleModal{{ $pizza->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <!-- Form to delete -->
+                                            <!-- Form to Delete -->
                                             <form action="{{route('pizza.destroy', $pizza->id)}}" method="post">@csrf
                                                 @method('DELETE')
                                                 <div class="modal-dialog">
@@ -92,7 +93,6 @@
                       </table>
                       {{ $pizzas->links() }}
                 </div>
-
             </div>
         </div>
     </div>

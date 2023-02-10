@@ -42,6 +42,6 @@ class FrontendController extends Controller
             'body' => $request->body,
             'phone' => $request->phone
         ]);
-        return back()->with('message', 'Your order is sucessfull. ');
+        return back()->with('message', 'Your order is successful. ');
     }
 }

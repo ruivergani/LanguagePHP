@@ -21,8 +21,8 @@ class CustomAuthController extends Controller
             'username'=>'required|min:1|max:20|unique:users',
             'password'=>'required|min:5|max:20',
             'email'=>'required|email|unique:users',
-            'url' => 'required|regex:'.$regex,
-            'dob'=>'required'
+            'url' => 'regex:'.$regex, // validate url.com
+            'dob'=>'required|date|before:-18 years' // make sure candidate is older than 18 years
         ]);
         // Save the data into the database
         $user = new User();

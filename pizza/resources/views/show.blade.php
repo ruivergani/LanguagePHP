@@ -11,6 +11,17 @@
                     @if(Auth::check())
                         <form method="post" action="{{route('order.store')}}">@csrf
                             <div class="form-group">
+                                @if (session('message'))
+                                    <div class="alert alert-success" role="alert">
+                                        {{ session('message') }}
+                                    </div>
+                                @endif
+                                @if (session('errormessage'))
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ session('errormessage') }}
+                                    </div>
+                                @endif
+                                <p>Current Order: £ </p>
                                 <p>Name: {{auth()->user()->name}}</p>
                                 <p>E-mail: {{auth()->user()->email}}</p>
                                 <p>Phone number: <input type="number" class="form-control" name="phone" required></p>
@@ -41,16 +52,7 @@
                                         Make Order
                                     </button>
                                 </p>
-                                @if (session('message'))
-                                    <div class="alert alert-success" role="alert">
-                                        {{ session('message') }}
-                                    </div>
-                                @endif
-                                @if (session('errormessage'))
-                                    <div class="alert alert-danger" role="alert">
-                                        {{ session('errormessage') }}
-                                    </div>
-                                @endif
+
                             </div>
                         </form>
                     @else
@@ -64,7 +66,8 @@
 
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Pizza</div>
+                <!-- Script to display total value current order -->
+                <div class="card-header">Pizza </div>
                 <div class="card-body">
                     <div class="row align-content-center text-center">
                         <img src="{{Storage::url($pizza->image)}}" class="img-thumbnail mx-auto d-block" alt="" style="width: 60%;">
